@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+<title>Taboca Labs - WebCam to Canvas Capture API from JavaScript</title>
+	<link media="screen, projection" type="text/css" href="../../style/base.css" rel="stylesheet">
+	<link media="screen, projection" type="text/css" href="../../style/tabs.css" rel="stylesheet">
+	<link media="screen, projection" type="text/css" href="../../style/button.css" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<script type="text/javascript" src="../../script/jquery.js"></script>
+	<script type="text/javascript" src="../../script/site.js"></script>
+	<script type="text/javascript" src="camcanvas.js"></script>
+
+</head>
+<body onload="initCanvas(320,240)">
+
+<h1>CamCanvas API 0.2</h1>
+
+<ul>
+<li>Get the list of available Cameras.</li>
+<li>Initialize the camera with the resolution width and height.</li>
+<li>Capture Webcam Images via JavaScript.</li>
+<li>Access the webcam image using the <a href="http://www.jetbin.com/hvh32">canvas</a> tag.</li>
+<li>Manipulate, encode, upload as you wish.</li>
+<li>____ and what else? </li>
+<li><a name="bruno" href="http://cam.mamulti.com/">Face Detection JS app by Bruno Barreto</a></li>
+<li>___ add yours here___</li>
+</ul>
+
+<h2>Samples</h2>
+	
+    <div class="webcam-origin" style="margin-top:1em;-moz-border-radius:12px; background-color:#ddd;width:360px;text-align:center;height:260px;padding-top:15px;margin-bottom:1em;">
+	
+
+  	<object  id="iembedflash" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="320" height="240">
+  		<param name="movie" value="camcanvas.swf" />
+  		<param name="quality" value="high" />
+		<param name="allowScriptAccess" value="always" />
+  		<embed  allowScriptAccess="always"  id="embedflash" src="camcanvas.swf" quality="high" width="320" height="240" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" mayscript="true"  />
+	</object>
+
+    </div>
+
+<button onclick="setFunction('passLineEmboss')">Emboss</button>
+<button onclick="setFunction('passLineRed')">Red</button>
+<button onclick="setFunction('passLineNormal')">Normal</button>
+<button onclick="setFunction('passLineInversed')">Inversed</button>
+<button onclick="setFunction('passLineGrayscale')">Grayscale</button>
+
+<div class="webcam-target" style="margin-top:1em;-moz-border-radius:12px; background-color:#ddd;width:360px;text-align:center;height:260px;padding-top:15px;;">
+   <canvas  id="canvas" width="320" height="240"></canvas>
+</div>
+
+</body>
+</html>

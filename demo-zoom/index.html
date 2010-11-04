@@ -1,0 +1,54 @@
+<html>
+<head>
+<script>
+        var c=1;
+	var r=0;
+	var tt=0;
+	function start() { 
+
+		//c-=.05;
+		r+=1;
+		tt+=10;
+		document.getElementById("movable").setAttribute("style","-moz-transform:scale("+c+");-moz-transform:rotate("+r+"deg)");
+		document.getElementById("position").style.top=tt+"px";
+		document.getElementById("position").style.left=-tt+"px";
+		if(r<180) { 
+			setTimeout("start()",100);
+		} 
+
+
+	}
+</script>
+
+<style>
+ 
+  .bg { 
+        background-image: -moz-radial-gradient( 50% 30% 90deg, circle, #006EA0 0%, #304160 80%);
+   } 
+
+</style>
+</head>
+
+<body onload="start()">
+
+<div id="overflower" class='bg'  style='position:relative;overflow:hidden;width:100%;height:100%'>
+<div id='position' style='position:absolute;width:4000px;height:4000px;top:0px;left:0px'>
+<div id='movable' style='position:absolute;top:0;left:0;width:4000px;height:4000px'>
+dlkaldk
+   <div id="area1" style='position:absolute;background-color:red;width:3200px;height:240px;top:100px;left:100px'>
+   </div>
+
+   <div id="area2" style='position:absolute;background-color:blue;width:320px;height:2490px;top:400px;left:400px'>
+   </div>
+
+   <div id="area3" style='position:absolute;background-color:blue;width:320px;height:240px;top:350px;left:700px'>
+	<iframe src="../demo-reflection/index.html" style='-moz-transform:rotate(180deg)' />
+   </div>
+
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
