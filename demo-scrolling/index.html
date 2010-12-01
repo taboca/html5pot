@@ -1,0 +1,55 @@
+<html>
+<head>
+<script>
+	var ctx = null; 
+        var elm = "This is what I want to scroll"; 
+		w = 300; 
+	 	h = 200;
+	function start() { 
+                var canvas = document.getElementById("textscroll");
+                canvas.style.width = w + "px";
+                canvas.style.height = h + "px";
+                canvas.width = w;
+                canvas.height = h;
+
+                ctx = canvas.getContext("2d");
+                ctx.fillStyle = "rgba(0, 0, 0, 1)";
+                ctx.font = "30px Verdana";
+                ww = ctx.mozMeasureText(elm);
+		ctx.save();
+                ctx.fillText(elm, ww,50);
+		x=ww;
+		setTimeout("loop()",100);
+		
+	} 
+	var x = 0;
+	var ww = 0;
+	function loop() { 
+		x--;
+		ctx.fillStyle = "rgb(255, 255, 255)";
+                ctx.fillRect (0, 0, w , h);
+                ctx.fillStyle = "rgba(0, 0, 0, 1)";
+		ctx.restore();
+                ctx.fillText(elm, x,50);
+		if(x<-1*ww) { 
+			 x = ww;
+		} 
+		setTimeout("loop()",10);
+	} 
+</script>
+
+<style>
+ 
+
+</style>
+</head>
+
+<body onload="start()">
+
+<div id='scale' > 
+  <canvas id="textscroll">
+  </canvas> 
+</div>
+
+</body>
+</html>
